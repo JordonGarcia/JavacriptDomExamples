@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Background color input slider</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom styles for this project -->
+    <link rel="stylesheet" href="../css/project-styles/projectB.css">
+</head>
+
+<body>
+    <p id="title-list">Change background RGB color from input sliders.</p>
+    <div class="container">
+        <!-- HTML INPUT SLIDER -->
+        <span id="range-value">RGB(255, 255, 255)</span>
+        <div id="range-div">
+            <!-- Input Slider red -->
+            <p id="red-current-value">Red </p>
+            <input type="range" class="range form-range w-50" min="0" max="255" id="input-scroll-red">
+            <!-- Input Slider green -->
+            <p id="green-current-value">Green </p>
+            <input type="range" class="range form-range w-50" min="0" max="255" id="input-scroll-green">
+            <!-- Input Slider blue -->
+            <p id="blue-current-value">Blue</p>
+            <input type="range" class="range form-range w-50" min="0" max="255" id="input-scroll-blue">
+        </div>
+    </div>
+    <button id="reset-btn" class="white-btn custom-btn">Reset</button>
+    <div>
+        <a href="../../">
+            <button id="home-button" class="custom-btn white-btn">Back to Gallery</button>
+        </a>
+    </div>
+    <script src="../js/projects/projectB.js" defer></script>
+</body>
+
+</html>

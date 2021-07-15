@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#title-list {
+    margin-top: 15vh;
+    position: relative;
+    text-align: center;
+    font-size: 2.8rem;
+    font-family: 'Dosis', 'Cormorant Garamond', serif;
+}
+
+#title-list-secondary {
+    position: relative;
+    text-align: center;
+    font-size: 1.15rem;
+    font-family: 'Dosis', 'Cormorant Garamond', serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* White button styling */
+
+.white-btn {
+    background-color: rgb(226, 226, 226) !important;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.white-btn:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+/* Back home button styling */
+
+#reset-button {
+    margin-top: 1vh;
+}
+
+#home-button {
+    margin-top: 2vh;
+    width: fit-content;
+}
+
+/* Increase, Decrease button styling */
+
+#increase-btn {
+    background-color: rgba(33, 156, 21, 0.6);
+    box-shadow: inset 2px 2px 2px 0px rgba(20, 121, 0, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+#increase-btn:after {
+    box-shadow:
+        -7px -7px 20px 0px rgba(0, 145, 36, 0.6),
+        -4px -4px 5px 0px rgba(0, 145, 36, 0.6),
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+#decrease-btn {
+    background-color: rgba(156, 21, 21, 0.6);
+    box-shadow: inset 2px 2px 2px 0px rgba(112, 2, 2, 0.6) 7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+#decrease-btn:after {
+    box-shadow:
+        -7px -7px 20px 0px rgba(185, 27, 27, 0.6),
+        -4px -4px 5px 0px rgba(185, 27, 27, 0.6),
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+/* Button styling (All the buttons globally) */
+
+.button-styles {
+    margin: 20px;
+    margin-top: 15vh;
+    width: 8vw;
+    height: 5vh;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+    color: #000;
+}
+
+.button-styles:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+}
+
+.button-styles:active {
+    top: 3px;
+}
+
+.button-styles:hover {
+    border-radius: 5px;
+    color: #000;
+}
+
+.button-styles:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+/* Counter styling */
+
+#counter-value {
+    margin: auto;
+    font-size: 2rem
+}
+
+#counter-value-div {
+    margin-top: 8vh;
+}
