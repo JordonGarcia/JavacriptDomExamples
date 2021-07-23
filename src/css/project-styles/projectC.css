@@ -33,12 +33,9 @@ p {
 }
 
 /* White button styling */
-
 .white-btn {
     background-color: rgb(226, 226, 226) !important;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 .white-btn:after {
@@ -51,16 +48,11 @@ p {
     left: 0;
     direction: rtl;
     z-index: -1;
-    box-shadow:
-        -7px -7px 20px 0px #fff9,
-        -4px -4px 5px 0px #fff9,
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
+    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
     transition: all 0.3s ease;
 }
 
 /* Back home button styling */
-
 #reset-button {
     margin-top: 1vh;
 }
@@ -71,40 +63,27 @@ p {
 }
 
 /* Increase, Decrease button styling */
-
 #increase-btn {
     background-color: rgba(33, 156, 21, 0.6);
-    box-shadow: inset 2px 2px 2px 0px rgba(20, 121, 0, 0.5),
-        7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0px rgba(20, 121, 0, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #increase-btn:after {
-    box-shadow:
-        -7px -7px 20px 0px rgba(0, 145, 36, 0.6),
-        -4px -4px 5px 0px rgba(0, 145, 36, 0.6),
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
+    box-shadow: -7px -7px 20px 0px rgba(0, 145, 36, 0.6), -4px -4px 5px 0px rgba(0, 145, 36, 0.6), 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
     transition: all 0.3s ease;
 }
 
 #decrease-btn {
     background-color: rgba(156, 21, 21, 0.6);
-    box-shadow: inset 2px 2px 2px 0px rgba(112, 2, 2, 0.6) 7px 7px 20px 0px rgba(0, 0, 0, .1),
-        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 2px 2px 2px 0px rgba(112, 2, 2, 0.6) 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
 }
 
 #decrease-btn:after {
-    box-shadow:
-        -7px -7px 20px 0px rgba(185, 27, 27, 0.6),
-        -4px -4px 5px 0px rgba(185, 27, 27, 0.6),
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
+    box-shadow: -7px -7px 20px 0px rgba(185, 27, 27, 0.6), -4px -4px 5px 0px rgba(185, 27, 27, 0.6), 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
     transition: all 0.3s ease;
 }
 
 /* Button styling (All the buttons globally) */
-
 .button-styles {
     margin: 20px;
     margin-top: 15vh;
@@ -154,7 +133,6 @@ p {
 }
 
 /* Counter styling */
-
 #counter-value {
     margin: auto;
     font-size: 2rem

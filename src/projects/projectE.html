@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Custom styles for this project -->
+    <link rel="stylesheet" href="../css/project-styles/projectE.css">
+</head>
+
+<body>
+    <div id="game-div">
+        <h2 id="header-primary">Guess the random number between 0 and 100 within 10 times</h2>
+        <h4 id="header-secondary"> If you win, you win $500! If you lose, you lose everything! How high can you go?</h4>
+        <button id="start-game-button" class="white-btn custom-btn button-styles">Start Game</button>
+        <div id="game-active-area">
+            <span id="balance-amount" class="h5">Your current balance: $0</span><br>
+            <span id="win-streak-text" class="h5">Winstreak count: 0</span><br>
+            <div id="game-container">
+                <span id="higher-lower-text">The number is</span>
+                <!-- TODO: Style the buttons with the custom white button CSS -->
+                <input type="number" id="guess-input"><button id="guess-button" class="confetti-button">Guess</button>
+            </div>
+        </div>
+        <p id="game-result" class="h3"></p>
+        <button id="new-game-button" class="button-styles white-btn gallery-text">New Game</button>
+    </div>
+
+    <!-- Game over popup display -->
+    <div id="game-over-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close-modal">&times;</span>
+                <h3>Out of tries! You lost all your money!</h3>
+            </div>
+            <div class="modal-body">
+                <p class="m-2 h2">Game over!</p>
+                <p id="input-error-text"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="close-modal-div" class="btn btn-dark m-2">Close</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Div UI Area -->
+    <div id="button-div-section">
+        <button id="reset-btn" class="white-btn custom-btn button-styles">Reset</button>
+        <a href="../../">
+            <button id="home-button" class="button-styles white-btn gallery-text">Back to Gallery</button>
+        </a>
+    </div>
+
+    <script src="../js/projects/projectE.js" defer></script>
+</body>
+
+</html>

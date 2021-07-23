@@ -10,9 +10,6 @@ const distanceDiv = document.getElementById('calculate-distance-div');
 const speedKilometers = document.getElementById('speed-kilometers-option');
 const selectOption = document.getElementById('speed-distance-select');
 const speedDiv = document.getElementById('calculate-speed-div');
-const distanceInput = document.getElementById('distance-input');
-const speedInput = document.getElementById('speed-input');
-// TODO: Move some of all these variables down to the functions to make it look cleaner and more organized ^
 const measurement = { Kilometres: 'KPH', Miles: 'MPH' };
 
 const selectMeasurement = e => {
@@ -119,9 +116,13 @@ const verifySecondValue = () => {
     }
 }
 
+// Speed and Distance user inputs
+const distanceInput = document.getElementById('distance-input');
+const speedInput = document.getElementById('speed-input');
 // Average Speed Calculation Results.
 let averageSpeedResult = document.getElementById('average-speed-result');
 let speedResultDiv = document.getElementById('speed-result-div');
+
 // Calculate speed using given input values provided
 const calculateSpeed = () => {
     let mile = distanceInput.value;

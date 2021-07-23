@@ -47,9 +47,7 @@ let decreaseFunctionFire = () => {
     })(++currentIndex), 100); // Millisecond fire time
 }
 
-let removeFunctionFire = () => {
-    isMouseDown = false;
-};
+let removeFunctionFire = () => isMouseDown = false;
 
 reset.onclick = () => {
     currentValue = 0;
