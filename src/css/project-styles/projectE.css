@@ -11,6 +11,14 @@ body {
     user-select: none;
 }
 
+canvas {
+    z-index: -100;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 h3 {
     margin: 0 auto;
 }

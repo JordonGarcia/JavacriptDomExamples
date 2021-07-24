@@ -9,7 +9,7 @@
     const guessInput = document.getElementById('guess-input');
     let guessCount = 1;
 
-    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
 
     // This is where we check our current balance.
     const balanceAmountValue = sessionStorage.getItem('winBalance');
@@ -66,7 +66,9 @@
                 highLowText.innerHTML = 'You guessed it!';
                 sessionStorage.setItem('winStreak', winStreak);
                 sessionStorage.setItem('winBalance', balance);
+                randomNumber = undefined;
                 gameWin();
+                launchConfetti();
                 break;
         }
     }
@@ -89,7 +91,8 @@
     }
 
     const gameLose = () => {
-        // Todo: Update Balance.
+        const numberReveal = document.getElementById('number-reveal');
+        numberReveal.innerHTML = randomNumber;
         highLowText.style.display = 'block';
         gameOverModal.style.display = 'block';
         sessionStorage.clear();
@@ -106,7 +109,7 @@
     const resetButton = document.getElementById('reset-btn');
     resetButton.onclick = () => { location.reload(); sessionStorage.clear(); }
 
-    // Confetti button functionality.
+    // Confetti Button functionality.
     const animateButton = (e) => {
         e.preventDefault;
         e.target.classList.remove('animate');
@@ -125,3 +128,73 @@
     guessButton.addEventListener('click', validateInput, false);
     newGameButton.addEventListener('click', newGame, false);
 })();
+
+// Confetti Falling Animation.
+const launchConfetti = () => {
+    const canvasEl = document.querySelector('#canvas');
+    const w = canvasEl.width = window.innerWidth;
+    const h = canvasEl.height = window.innerHeight * 2;
+
+    const loop = () => {
+        requestAnimationFrame(loop);
+        ctx.clearRect(0, 0, w, h);
+
+        confettiObj.forEach((conf) => {
+            conf.update();
+            conf.draw();
+        })
+    }
+
+    function Confetti() {
+        //construct confetti
+        const colors = ['#00e626', '#fff024', '#00f0e0', '#00aaf2', '#ff7700'];
+
+        this.x = Math.round(Math.random() * w);
+        this.y = Math.round(Math.random() * h) - (h / 2);
+        this.rotation = Math.random() * 360;
+
+        const size = Math.random() * (w / 60);
+        this.size = size < 15 ? 15 : size;
+
+        this.color = colors[Math.floor(colors.length * Math.random())];
+
+        this.speed = this.size / 7;
+
+        this.opacity = Math.random();
+
+        this.shiftDirection = Math.random() > 0.5 ? 1 : -1;
+    }
+
+    Confetti.prototype.border = function () {
+        if (this.y >= h) {
+            this.y = h;
+        }
+    }
+
+    Confetti.prototype.update = function () {
+        this.y += this.speed;
+
+        if (this.y <= h) {
+            this.x += this.shiftDirection / 3;
+            this.rotation += this.shiftDirection * this.speed / 100;
+        }
+
+        if (this.y > h) this.border();
+    };
+
+    Confetti.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation + (Math.PI / 2));
+        ctx.lineTo(this.x, this.y);
+        ctx.closePath();
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    };
+
+    const ctx = canvasEl.getContext('2d');
+    const confNum = Math.floor(w / 4);
+    const confettiObj = new Array(confNum).fill().map(_ => new Confetti());
+
+    loop();
+}
