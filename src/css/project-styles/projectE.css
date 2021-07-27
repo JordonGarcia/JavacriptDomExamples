@@ -95,8 +95,8 @@ input[type=number] {
 .button-styles {
     margin: 18px;
     margin-top: 8vh;
-    width: 7vw;
-    height: 5vh;
+    width: fit-content;
+    height: fit-content;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
@@ -321,5 +321,32 @@ input[type=number] {
     100% {
         background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
         background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+/* Project UI Responsiveness */
+/* Larger sized mobile devices */
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+
+    * {
+        touch-action: manipulation;
+    }
+
+    #game-div {
+        margin-top: 12vh;
+    }
+
+    #header-primary {
+        font-size: 2rem;
+        margin-top: 5vh;
+    }
+
+    #header-secondary {
+        margin-top: 2vh;
+        font-size: 1.25rem;
+    }
+
+    #button-styles {
+        margin-top: 1vh;
     }
 }
