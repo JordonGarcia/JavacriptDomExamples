@@ -129,8 +129,11 @@ const calculateSpeed = () => {
     let time = hours[0].value / 1 + minutes[0].value / 60 + seconds[0].value / 3600;
 
     let averageSpeed = mile / time;
+    averageSpeed = isNaN(averageSpeed) ? 0 : averageSpeed;
     averageSpeed = (new Intl.NumberFormat('en-US').format(averageSpeed.toFixed(2)));
     distanceInput.value = hours[0].value = minutes[0].value = seconds[0].value = null;
+
+    console.log(averageSpeed);
 
     averageSpeedResult.innerText = `Average Speed: ${averageSpeed} MPH`;
     speedResultDiv.style.display = 'block';
