@@ -32,8 +32,8 @@ button {
 
 .custom-btn {
   margin-top: 20vh;
-  width: 10vw;
-  height: 5vh;
+  width: fit-content;
+  height: fit-content;
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
@@ -87,4 +87,30 @@ button {
 #home-button,
 #reset-button {
   margin-top: 2vh;
+}
+
+/* Project UI Responsiveness */
+/* Larger sized mobile devices */
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+
+  * {
+    touch-action: manipulation;
+  }
+
+  #title-list {
+    font-size: 1.3rem;
+  }
+
+  .custom-btn {
+    margin-top: 15vh;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .white-btn {
+    color: #000;
+  }
 }

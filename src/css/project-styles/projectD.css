@@ -59,8 +59,8 @@ p {
 .button-styles {
     margin: 20px;
     margin-top: 15vh;
-    width: 8vw;
-    height: 5vh;
+    width: fit-content;
+    height: fit-content;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
@@ -110,10 +110,11 @@ label {
 }
 
 #calculator-wrapper {
+    color: white;
     width: fit-content;
-    background: #f0f0f0;
-    padding: 0.7em 0.7em 0.7em 0.7em;
-    border: 2px solid rgb(36, 36, 36);
+    background: rgb(44, 48, 53);
+    padding: 2em;
+    border: 2px solid #000;
     border-radius: 4px;
     font-size: 0.9em;
     display: flex;
@@ -257,4 +258,22 @@ input {
 
 #input-error-text {
     font-weight: bold;
+}
+
+/* Project UI Responsiveness */
+/* Larger sized mobile devices */
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+
+    * {
+        touch-action: manipulation;
+    }
+
+    #title-list {
+        margin-top: 8vh;
+        font-size: 2rem;
+    }
+
+    .button-styles {
+        margin-top: 5vh;
+    }
 }

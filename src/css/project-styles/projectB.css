@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  overflow: hidden;
+  overflow: scroll;
   background-color: rgb(255, 255, 255);
 }
 
@@ -29,9 +29,9 @@ button {
 }
 
 .custom-btn {
-  margin-top: 20vh;
-  width: 10vw;
-  height: 5vh;
+  margin-top: 15vh;
+  width: fit-content;
+  height: fit-content;
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
@@ -100,4 +100,29 @@ button {
 #green-current-value,
 #blue-current-value {
   font-family: 'Dosis', 'Cormorant Garamond', serif;
+}
+
+/* Project UI Responsiveness */
+/* Larger sized mobile devices */
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+
+  * {
+    touch-action: manipulation;
+  }
+
+  #title-list {
+    font-size: 2rem;
+  }
+
+  .custom-btn {
+    margin-top: 5vh
+  }
+
+  #range-div {
+    margin-top: 4vh;
+  }
+
+  #range-value {
+    font-size: 1.5rem;
+  }
 }
