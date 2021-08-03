@@ -194,15 +194,15 @@ input[type=number] {
 }
 
 /* The Close Button */
-#close-modal {
+.close-modal {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-#close-modal:hover,
-#close-modal:focus {
+.close-modal:hover,
+.close-modal:focus {
     color: grey;
     text-decoration: none;
     cursor: pointer;
@@ -337,13 +337,13 @@ input[type=number] {
     }
 
     #header-primary {
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-top: 5vh;
     }
 
     #header-secondary {
         margin-top: 2vh;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
     #button-styles {

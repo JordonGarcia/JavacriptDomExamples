@@ -1,10 +1,10 @@
 (() => {
     const startGameButton = document.getElementById('start-game-button');
-    const balanceAmount = document.getElementById('balance-amount');
     const activeGameArea = document.getElementById('game-active-area');
     const highLowText = document.getElementById('higher-lower-text');
     const gameOverModal = document.getElementById('game-over-modal');
     const newGameButton = document.getElementById('new-game-button');
+    const balanceAmount = document.getElementById('balance-amount');
     const guessButton = document.getElementById('guess-button');
     const guessInput = document.getElementById('guess-input');
     let guessCount = 1;
@@ -35,13 +35,20 @@
     const winStreakText = document.getElementById('win-streak-text');
     winStreakText.innerHTML = `WinStreak is: ${winStreak}`;
 
+    // Modal elements.
+    const inputErrorMessage = document.getElementById('input-error-text');
+    const inputErrorMessageModal = document.getElementById('input-error-modal');
+
     // Verify that the numbers are within range and acceptable for the game.
     const inputAcceptable = () => {
+
         if (guessInput.value > 100) {
-            guessInput.value = null;
+            guessInput.value = null; highLowText.innerHTML = null;
+            inputErrorMessageModal.style.display = 'block';
             inputErrorMessage.innerText = 'Please choose a number within the guessing range of 0 to 100.';
         } else if (guessInput.value < 0) {
-            guessInput.value = null;
+            guessInput.value = null; highLowText.innerHTML = null;
+            inputErrorMessageModal.style.display = 'block';
             inputErrorMessage.innerText = 'Guess value cannot be negative.'
         }
     }
@@ -100,17 +107,20 @@
     }
 
     // Close out of the Game Over modal.
-    const modalXButton = document.getElementById('close-modal');
-    modalXButton.onclick = () => gameOverModal.style.display = 'none';
-    const closeDivButton = document.getElementById('close-modal-div');
-    closeDivButton.onclick = () => gameOverModal.style.display = 'none';
+    const modalXButton = document.getElementsByClassName('close-modal');
+    const closeDivButton = document.getElementsByClassName('close-modal-div');
+
+    const closeModal = () => {
+        inputErrorMessageModal.style.display = 'none';
+        gameOverModal.style.display = 'none';
+    }
 
     // Reset Button Action.
     const resetButton = document.getElementById('reset-btn');
     resetButton.onclick = () => { location.reload(); sessionStorage.clear(); }
 
     // Confetti Button functionality.
-    const animateButton = (e) => {
+    const animateButton = e => {
         e.preventDefault;
         e.target.classList.remove('animate');
         e.target.classList.add('animate');
@@ -127,6 +137,9 @@
     guessButton.addEventListener('click', validateGuess, false);
     guessButton.addEventListener('click', validateInput, false);
     newGameButton.addEventListener('click', newGame, false);
+    // Close the modal when the buttons are clicked.
+    for (let i = 0; i < closeDivButton.length; i++) closeDivButton[i].addEventListener('click', closeModal, false);
+    for (let i = 0; i < modalXButton.length; i++) modalXButton[i].addEventListener('click', closeModal, false);
 })();
 
 // Confetti Falling Animation.

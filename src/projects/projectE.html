@@ -36,7 +36,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span id="close-modal">&times;</span>
+                <span class="close-modal">&times;</span>
                 <h3>Out of tries! You lost all your money!</h3>
             </div>
             <div class="modal-body">
@@ -45,7 +45,26 @@
                 <p id="input-error-text"></p>
             </div>
             <div class="modal-footer">
-                <a href="#" id="close-modal-div" class="btn btn-dark m-2">Close</a>
+                <a href="#" class="close-modal-div btn btn-dark m-2">Close</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Error Modal -->
+    <div id="input-error-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h3>Please use acceptable input values.</h3>
+            </div>
+            <div class="modal-body">
+                <p class="m-2 h2" id="9"></p>
+                <h4>Please choose a number within the guessing range of 0 to 100. Numbers only, no letters
+                    and special characters.</h4>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="close-modal-div btn btn-dark m-2">Close</a>
             </div>
         </div>
     </div>
