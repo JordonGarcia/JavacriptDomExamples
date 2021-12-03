@@ -41,8 +41,9 @@
 
     // Verify that the numbers are within range and acceptable for the game.
     const inputAcceptable = () => {
+        const regex = /-/gi;
 
-        if (guessInput.value > 100) {
+        if (guessInput.value > 100 || guessInput.value.match(regex)) {
             guessInput.value = null; highLowText.innerHTML = null;
             inputErrorMessageModal.style.display = 'block';
             inputErrorMessage.innerText = 'Please choose a number within the guessing range of 0 to 100.';
@@ -159,7 +160,7 @@ const launchConfetti = () => {
     }
 
     function Confetti() {
-        //construct confetti
+        // Construct confetti
         const colors = ['#00e626', '#fff024', '#00f0e0', '#00aaf2', '#ff7700'];
 
         this.x = Math.round(Math.random() * w);

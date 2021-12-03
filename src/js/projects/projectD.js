@@ -2,17 +2,17 @@
 const calcDistanceButton = document.getElementById('calculate-distance-button');
 // Select the conversion type calculate "speed" or "distance".
 const chooseConversion = document.getElementById('miles-kilometers-select');
-// Define Kilometers for the selected output.
-const distanceKilometers = document.getElementById('distance-kilometers');
 const calcSpeedButton = document.getElementById('calculate-speed-button');
-const distanceDiv = document.getElementById('calculate-distance-div');
 // Select Calculator Option.
-const speedKilometers = document.getElementById('speed-kilometers-option');
 const selectOption = document.getElementById('speed-distance-select');
 const speedDiv = document.getElementById('calculate-speed-div');
 const measurement = { Kilometres: 'KPH', Miles: 'MPH' };
 
 const selectMeasurement = e => {
+    const speedKilometers = document.getElementById('speed-kilometers-option');
+    // Define Kilometers for the selected output.
+    const distanceKilometers = document.getElementById('distance-kilometers');
+
     let type = e.target.value;
     let abbreviation = measurement[type];
 
@@ -24,6 +24,7 @@ const selectMeasurement = e => {
 
 // Assure that the correct UI elements are shown in accordance to selected option.
 const optionSelect = (e) => {
+    const distanceDiv = document.getElementById('calculate-distance-div');
 
     switch (e.target.value) {
         case 'speed':
@@ -45,7 +46,7 @@ const optionSelect = (e) => {
     }
 };
 
-// Invalid Input value Div
+// Invalid Input value Div.
 const invalidInputDiv = document.getElementById('invalid-input-value-div');
 const inputErrorMessage = document.getElementById('input-error-text');
 // Declare Input Values for speed calculation.
@@ -112,18 +113,20 @@ const verifySecondValue = () => {
             seconds[i].value = null;
             invalidInputDiv.style.display = 'block';
             inputErrorMessage.innerText = 'Second value cannot be negative.'
+        } else {
+            invalidInputDiv.style.display = 'none';
         }
     }
 }
 
-// Speed and Distance user inputs
+// Speed and Distance user inputs.
 const distanceInput = document.getElementById('distance-input');
 const speedInput = document.getElementById('speed-input');
 // Average Speed Calculation Results.
 let averageSpeedResult = document.getElementById('average-speed-result');
 let speedResultDiv = document.getElementById('speed-result-div');
 
-// Calculate speed using given input values provided
+// Calculate speed using given input values provided.
 const calculateSpeed = () => {
     let mile = distanceInput.value;
     let time = hours[0].value / 1 + minutes[0].value / 60 + seconds[0].value / 3600;
@@ -133,13 +136,11 @@ const calculateSpeed = () => {
     averageSpeed = (new Intl.NumberFormat('en-US').format(averageSpeed.toFixed(2)));
     distanceInput.value = hours[0].value = minutes[0].value = seconds[0].value = null;
 
-    console.log(averageSpeed);
-
     averageSpeedResult.innerText = `Average Speed: ${averageSpeed} MPH`;
     speedResultDiv.style.display = 'block';
     distanceResultDiv.style.display = 'none';
 
-    // If Kilometers is selected, then change the output result to KPH
+    // If Kilometers is selected, then change the output result to KPH.
     if (chooseConversion.value === 'Kilometres') {
         averageSpeedResult.innerText = `Average Speed: ${averageSpeed} KPH`;
     }
@@ -148,7 +149,7 @@ const calculateSpeed = () => {
 // Average Distance Traveled Calculation Results.
 let distanceTraveledResult = document.getElementById('average-distance-result');
 let distanceResultDiv = document.getElementById('distance-result-div');
-// Calculate the distance using given input values provided
+// Calculate the distance using given input values provided.
 const calculateDistance = () => {
     let velocity = speedInput.value;
     let time = hours[1].value / 1 + minutes[1].value / 60 + seconds[1].value / 3600;
@@ -160,13 +161,13 @@ const calculateDistance = () => {
     distanceTraveledResult.innerText = `Approximate Distance Traveled: ${distanceTraveled} Miles`;
     distanceResultDiv.style.display = 'block';
 
-    // If Kilometers is selected, then change the output result to KPH
+    // If Kilometers is selected, then change the output result to KPH.
     if (chooseConversion.value === 'Kilometres') {
         distanceTraveledResult.innerText = `Approximate Distance Traveled: ${distanceTraveled} Kilometres`;
     }
 }
 
-// Reset the page on reset button click
+// Reset the page on reset button click.
 const reset = document.getElementById('reset-btn');
 reset.onclick = () => location.reload();
 
@@ -175,6 +176,23 @@ const modalXButton = document.getElementById('close-modal');
 modalXButton.onclick = () => invalidInputDiv.style.display = 'none';
 const closeDivButton = document.getElementById('close-modal-div');
 closeDivButton.onclick = () => invalidInputDiv.style.display = 'none';
+
+// Remove calculator visibility when error is shown.
+const calculator = document.getElementById('calculator-wrapper');
+const test = () => {
+    switch (invalidInputDiv.style.display) {
+
+        case 'block':
+            console.log('Error is shown!');
+            calculator.style.display = 'none';
+            break;
+
+        case 'none':
+            console.log('Error is hidden!');
+            calculator.style.display = 'block';
+            break;
+    }
+}
 
 // Calculate Distance on button calculate click.
 calcDistanceButton.addEventListener('click', calculateDistance, false);
@@ -187,7 +205,10 @@ selectOption.addEventListener('change', optionSelect, false);
 // Verify that the input values are acceptable.
 distanceInput.addEventListener('change', verifyDistanceValue, false);
 speedInput.addEventListener('change', verifySpeedValue, false);
-// Verify input values are acceptable for both selected calculator options
+// Remove calculator visibility when error is shown.
+calculator.addEventListener('change', test, false);
+// Verify input values are acceptable for both selected calculator options.
+
 for (let i = 0; i < hours.length; i++) hours[i].addEventListener('change', verifyHourValue, false);
 for (let i = 0; i < minutes.length; i++) minutes[i].addEventListener('change', verifyMinuteValue, false);
 for (let i = 0; i < seconds.length; i++) seconds[i].addEventListener('change', verifySecondValue, false);

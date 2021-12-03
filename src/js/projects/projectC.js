@@ -1,6 +1,4 @@
 const increaseButton = document.getElementById('increase-btn');
-const decreaseButton = document.getElementById('decrease-btn');
-let counterValue = document.getElementById('counter-value');
 const reset = document.getElementById('reset-btn');
 let style = document.body.style;
 let currentValue = 0;
@@ -8,6 +6,8 @@ let currentIndex = 0;
 let isMouseDown = false;
 
 let updateValue = () => {
+    let counterValue = document.getElementById('counter-value');
+
     if (currentValue >= 100) { currentValue = 100 }
     else if (currentValue <= -100) { currentValue = -100 }
     counterValue.innerHTML = currentValue;
@@ -57,13 +57,16 @@ reset.onclick = () => {
 
 // Check to see if the currentValue is positive or negative
 const updateBackGroundColor = () => {
+    const decreaseButton = document.getElementById('decrease-btn')
+
     decreaseButton.style.background = 'rgba(230, 25, 25, 0.7)';
     decreaseButton.style.boxShadow = '2px 2px 2px 0px rgba(210, 25, 25, 0.7)'
-    if (currentValue < 0) {
-        negativeBGColorChange();
-    } else {
-        positiveBGColorChange();
-    }
+    currentValue < 0 ? negativeBGColorChange() : positiveBGColorChange();
+
+    decreaseButton.addEventListener('mousedown', decreaseFunctionFire, false);
+    decreaseButton.addEventListener('mouseup', removeFunctionFire, false);
+    decreaseButton.addEventListener('mouseleave', removeFunctionFire, false);
+
 }
 
 const positiveBGColorChange = () => {
@@ -88,6 +91,3 @@ const negativeBGColorChange = () => {
 increaseButton.addEventListener('mousedown', addFunctionFire, false);
 increaseButton.addEventListener('mouseup', removeFunctionFire, false);
 increaseButton.addEventListener('mouseleave', removeFunctionFire, false);
-decreaseButton.addEventListener('mousedown', decreaseFunctionFire, false);
-decreaseButton.addEventListener('mouseup', removeFunctionFire, false);
-decreaseButton.addEventListener('mouseleave', removeFunctionFire, false);

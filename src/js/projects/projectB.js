@@ -1,15 +1,15 @@
-// Example 2: Change background RGB values based on input slider.
-let inputGreen = document.getElementById('input-scroll-green');
-let inputBlue = document.getElementById('input-scroll-blue');
-let redValue = document.getElementById('red-current-value');
-let greenValue = document.getElementById('green-current-value');
-let blueValue = document.getElementById('blue-current-value');
-let inputRed = document.getElementById('input-scroll-red');
-let reset = document.getElementById('reset-btn');
-let style = document.body.style;
-style.transitionDuration = '500ms';
-
 document.querySelectorAll('input').forEach(input => {
+
+    // Change background RGB values based on input slider.
+    let inputGreen = document.getElementById('input-scroll-green');
+    let inputBlue = document.getElementById('input-scroll-blue');
+    let redValue = document.getElementById('red-current-value');
+    let greenValue = document.getElementById('green-current-value');
+    let blueValue = document.getElementById('blue-current-value');
+    let inputRed = document.getElementById('input-scroll-red');
+    let reset = document.getElementById('reset-btn');
+    let style = document.body.style;
+    style.transitionDuration = '500ms';
 
     input.oninput = () => {
         let [r, g, b] = [inputRed.value, inputGreen.value, inputBlue.value]; // Set RGB values

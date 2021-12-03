@@ -5,9 +5,6 @@ body {
     padding: 0;
     text-align: center;
     overflow: scroll;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 #title-list {
@@ -275,5 +272,10 @@ input {
 
     .button-styles {
         margin-top: 5vh;
+    }
+
+    .modal {
+        width: 80vw;
+        height: 40vh;
     }
 }
