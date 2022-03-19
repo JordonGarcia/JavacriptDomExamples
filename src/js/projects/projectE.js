@@ -1,3 +1,6 @@
+// Check to see if cookies are enabled.
+if (!navigator.cookieEnabled) { alert('Cookies are not enabled. Please enable cookies for the experiment to work as intended.'); }
+
 (() => {
     const startGameButton = document.getElementById('start-game-button');
     const activeGameArea = document.getElementById('game-active-area');
