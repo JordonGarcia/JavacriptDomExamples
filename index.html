@@ -1,263 +1,261 @@
 <!doctype html>
 <html lang="en">
 
+<!-- TODO: Downsize Project Gallery showcase images to improve kb size and performance -->
+<!-- TODO: Major UI Update Overhaul -->
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="JavaScript DOM Project Examples">
-    <meta name="author" content="Jordon Garcia">
-    <title>JavaScript Projects</title>
-    <!-- Bootstrap core CSS -->
-    <link href="./src/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="./src/css/index.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="JavaScript DOM Project Examples">
+  <meta name="author" content="Jordon Garcia">
+  <title>JavaScript Projects</title>
+  <!-- TailWindCSS -->
+  <link href="./src/css/tailwind.css" rel="stylesheet">
 </head>
 
-
-<!-- TODO: Migrate to Tailwind and Vite -->
-
 <body>
-    <header>
-        <div class="collapse pt-3" id="navbarHeader">
+
+  <div class="bg-gray-900">
+    <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+      <div class="space-y-12">
+        <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+          <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">JavaScript Projects Gallery</h2>
+          <p class="text-xl text-gray-300">Simple JavaScript DOM project examples.</p>
         </div>
-        <div class="navbar navbar-dark bg-dark box-shadow p-3">
-            <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-code-square" viewBox="0 0 16 16">
-                        <path
-                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                        <path
-                            d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
-                    </svg>
-                    <strong class="mx-2">JavaScript Projects</strong>
-                </a>
-            </div>
-        </div>
-    </header>
-    <main role="main">
-        <section id="top-section-page" class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">JavaScript Examples</h1>
-                <p class="lead text-muted">Simple Beginner JavaScript examples.</p>
-                <p>
-                    <a href="#grid-area" class="btn btn-dark my-2">View Projects</a>
-                </p>
-            </div>
-        </section>
-        <section id="grid-area">
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="./src/images/ProjectA.png"
-                                    alt="Project A preview failed to load.">
-                                <!-- Project A card -->
-                                <div class="card-body">
-                                    <p class="card-text">Changing the page background color randomly by clicking on a
-                                        button.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- Project A href -->
-                                            <a href="./src/projects/projectA.html">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Project</button></a>
-                                            <!-- Project A code href -->
-                                            <a href="./src/js/projects/projectA.js">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Code</button>
-                                            </a>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="./src/images/ProjectB.png"
-                                    alt="Project B preview failed to load.">
-                                <!-- Project B card -->
-                                <div class="card-body">
-                                    <p class="card-text">Changing the page background color based off of input slider
-                                        values.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- Project B href -->
-                                            <a href="./src/projects/projectB.html">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Project</button></a>
-                                            <!-- Project B code href -->
-                                            <a href="./src/js/projects/projectB.js">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Code</button></a>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="./src/images/ProjectC.png"
-                                    alt="Project C preview failed to load.">
-                                <!-- Project C card -->
-                                <div class="card-body">
-                                    <p class="card-text">A simple JavaScript counter example.
-                                        Background color changes in accordance to counter values.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- Project C href -->
-                                            <a href="./src/projects/projectC.html">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Project</button></a>
-                                            <!-- Project C code href -->
-                                            <a href="./src/js/projects/projectC.js">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Code</button></a>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="./src/images/ProjectD.png"
-                                    alt="Project D preview failed to load.">
-                                <!-- Project D card -->
-                                <div class="card-body">
-                                    <p class="card-text">Speed Distance Time Calculator.
-                                        Good example of basic math done in JavaScript.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- Project D href -->
-                                            <a href="./src/projects/projectD.html">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Project</button></a>
-                                            <!-- Project D code href -->
-                                            <a href="./src/js/projects/projectD.js">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Code</button></a>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.1</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="./src/images/ProjectE.png"
-                                    alt="Project E preview failed to load.">
-                                <!-- Project E card -->
-                                <div class="card-body">
-                                    <p class="card-text">
-                                        Guess the number game. See if you can find out the number in
-                                        the least guesses!
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- Project E href -->
-                                            <a href="./src/projects/projectE.html">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Project</button></a>
-                                            <!-- Project E code href -->
-                                            <a href="./src/js/projects/projectE.js">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary mx-1">
-                                                    View Code</button></a>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.1</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <div class="card-body">
-                                    <p class="card-text">More projects coming soon.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <ul role="list" class="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
 
-                        <!-- <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" data-src=" " alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Project</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Code</button>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" data-src=" " alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Project</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Code</button>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" data-src=" " alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.
-                                    </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Project</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary mx-1">View
-                                                Code</button>
-                                        </div>
-                                        <small class="text-muted">Version 1.0.0</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+          <!-- Project A Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <a href="./src/projects/projectA.html">
+              <div class="space-y-6 xl:space-y-10">
+                <img class="mx-auto h-auto w-auto" src="https://i.imgur.com/fJcis4Y.png" alt="Project A Image">
+                <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                  <div class="font-medium text-lg leading-6 space-y-1">
+                    <h3 class="text-white">Background Color Change</h3>
+                    <p class="text-indigo-400">View Project & Source</p>
+                  </div>
+                  <ul role="list" class="flex justify-center space-x-5">
+                    <li>
+                      <!-- TODO: Bundle the scripts within vite, so you don't need long github links. -->
+                      <a href="https://raw.githubusercontent.com/JordonGarcia/JavacriptDomExamples/master/src/js/projects/projectA.js"
+                        class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Project</span>
+                        <!-- Project Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <!-- Project Href Icon End -->
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./source/projectA.txt" target="_blank" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Source Code</span>
+                        <!-- Source Code Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <!-- Source Code Href Icon End -->
+                      </a>
+                    </li>
+                  </ul>
                 </div>
+              </div>
+            </a>
+          </li>
+          <!-- Project A End -->
+
+          <!-- Project B Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <a href="./src/projects/projectB.html">
+              <div class="space-y-6 xl:space-y-10">
+                <img class="mx-auto h-auto w-auto" src="https://i.imgur.com/NslaY2X.png" alt="Project B Image">
+                <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                  <div class="font-medium text-lg leading-6 space-y-1">
+                    <h3 class="text-white">Input Slider Background</h3>
+                    <p class="text-indigo-400">View Project & Source</p>
+                  </div>
+                  <ul role="list" class="flex justify-center space-x-5">
+                    <li>
+                      <a href="./src/projects/projectB.html" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Projects</span>
+                        <!-- Project Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <!-- Project Href Icon End -->
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://raw.githubusercontent.com/JordonGarcia/JavacriptDomExamples/master/src/js/projects/projectB.js"
+                        target="_blank" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Source Code</span>
+                        <!-- Source Code Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <!-- Source Code Href Icon End -->
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- Project B End -->
+
+          <!-- Project C Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <a href="./src/projects/projectC.html">
+              <div class="space-y-6 xl:space-y-10">
+                <img class="mx-auto h-auto w-auto" src="https://i.imgur.com/9qGbGrd.png" alt="Project B Image">
+                <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                  <div class="font-medium text-lg leading-6 space-y-1">
+                    <h3 class="text-white">Javascript Counter</h3>
+                    <p class="text-indigo-400">View Project & Source</p>
+                  </div>
+                  <ul role="list" class="flex justify-center space-x-5">
+                    <li>
+                      <a href="./src/projects/projectC.html" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Projects</span>
+                        <!-- Project Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <!-- Project Href Icon End -->
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./src/js/projectC.js" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Source Code</span>
+                        <!-- Source Code Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <!-- Source Code Href Icon End -->
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- Project C End -->
+
+          <!-- Project D Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <a href="./src/projects/projectD.html">
+              <div class="space-y-6 xl:space-y-10">
+                <img class="mx-auto h-auto w-auto" src="https://i.imgur.com/ZQ2S28n.png" alt="Project B Image">
+                <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                  <div class="font-medium text-lg leading-6 space-y-1">
+                    <h3 class="text-white">Time and Speed Distance Calculator</h3>
+                    <p class="text-indigo-400">View Project & Source</p>
+                  </div>
+                  <ul role="list" class="flex justify-center space-x-5">
+                    <li>
+                      <a href="./src/projects/projectD.html" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Projects</span>
+                        <!-- Project Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <!-- Project Href Icon End -->
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./src/js/projectD.js" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Source Code</span>
+                        <!-- Source Code Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <!-- Source Code Href Icon End -->
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- Project D End -->
+
+          <!-- Project E Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <a href="./src/projects/projectE.html">
+              <div class="space-y-6 xl:space-y-10">
+                <img class="mx-auto h-auto w-auto" src="https://i.imgur.com/9Wa924Z.png" alt="Project B Image">
+                <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                  <div class="font-medium text-lg leading-6 space-y-1">
+                    <h3 class="text-white">Number Guess Game</h3>
+                    <p class="text-indigo-400">View Project & Source</p>
+                  </div>
+                  <ul role="list" class="flex justify-center space-x-5">
+                    <li>
+                      <a href="./src/projects/projectE.html" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Projects</span>
+                        <!-- Project Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                        <!-- Project Href Icon End -->
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./src/js/projectE.js" class="text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">View Source Code</span>
+                        <!-- Source Code Href Icon Start -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <!-- Source Code Href Icon End -->
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- Project E End -->
+
+          <!-- Coming Soon Start -->
+          <li class="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+            <div class="space-y-6 xl:space-y-10">
+              <div class="space-y-2 xl:flex xl:items-center xl:justify-between">
+                <div class="font-semibold text-lg leading-6 space-y-1">
+                  <h3 class="text-white">More Projects Coming Soon.</h3>
+                </div>
+              </div>
             </div>
-        </section>
-    </main>
-    <footer class="bg-dark">
-        <div class="container">
-            <p class="text-white">Developed by Jordon using Bootstrap</p>
-            <p class="text-white">If you are interested in viewing the source, check the
-                <a href="https://github.com/JordonGarcia/JavacriptDomExamples" target="_blank">
-                    GitHub Repository</a>
-            </p>
-        </div>
-    </footer>
+          </li>
+          <!-- Coming Soon End -->
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 
 </html>
