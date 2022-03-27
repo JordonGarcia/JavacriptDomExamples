@@ -4,113 +4,12 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    overflow: scroll;
 }
 
 h1 {
-    margin-top: 15vh;
-    position: relative;
-    text-align: center;
-    color: #131313;
-    font-size: 2.8rem;
-    font-family: 'Dosis', 'Cormorant Garamond', serif;
+    font-family: 'Dosis';
 }
 
 p {
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #0f0f0f;
-}
-
-/* Custom Button Styling */
-button {
-    background-color: rgb(226, 226, 226) !important;
-    margin: 20px;
-}
-
-.custom-btn {
-    margin-top: 20vh;
-    width: fit-content;
-    height: fit-content;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    font-size: 1rem;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-}
-
-.white-btn {
-    border: none;
-    color: #000;
-}
-
-.white-btn:after {
-    border-radius: 5px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
-    transition: all 0.3s ease;
-}
-
-.white-btn:hover {
-    border-radius: 5px;
-    color: #000;
-}
-
-.white-btn:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
-}
-
-.white-btn:active {
-    top: 3px;
-}
-
-/* Back home button styling */
-#home-button,
-#reset-button {
-    margin-top: 2vh;
-}
-
-/* Project UI Responsiveness */
-/* Larger sized mobile devices */
-@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-
-    * {
-        touch-action: manipulation;
-    }
-
-    #title-list {
-        font-size: 1.3rem;
-    }
-
-    .custom-btn {
-        margin-top: 15vh;
-        color: #fff;
-        border-radius: 5px;
-        padding: 10px 25px;
-        font-weight: 500;
-        font-size: 1rem;
-    }
-
-    .white-btn {
-        color: #000;
-    }
 }
