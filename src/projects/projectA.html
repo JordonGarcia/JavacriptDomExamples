@@ -7,23 +7,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- TailWindCSS -->
+  <link href="../css/tailwind.css" rel="stylesheet">
   <!-- Custom styles for this project -->
   <link rel="stylesheet" href="../css/projects/projectA.css">
   <title>Background color button</title>
 </head>
 
-<body>
-  <h1 id="title-main">Background Color Change</h1>
-  <p id="title-list">Change the color of the background by clicking on the button below.</p>
-  <button id="button-select" class="custom-btn white-btn">Click me!</button>
+<body class="bg-gray-50">
+  <h1 id="title-main" class="text-2xl laptop:text-5xl mt-20 laptop:mt-48">Background Color Change</h1>
+  <p id="title-list" class="mt-2.5 laptop:mt-5 text-base laptop:text-xl">
+    Change the background color by clicking on the button below.
+  </p>
+
+  <!-- Click me Button Start -->
+  <button type="button" id="button-select"
+    class="mt-6 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base 
+    font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    Click me!
+  </button>
+  <!-- Click me Button End -->
+
+  <!-- Reset Button Start -->
   <div>
-    <button id="reset-button" class="custom-btn white-btn">Reset</button>
+    <button type="button" id="reset-button"
+      class="mt-6 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
+     rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+      Reset
+    </button>
   </div>
+  <!-- Reset Button End -->
+
+  <!-- Back To Gallery Button Start -->
   <div>
-    <a href="../../">
-      <button id="home-button" class="custom-btn white-btn">Back to Gallery</button>
+    <a href="/">
+      <button type="button" id="home-button"
+        class="mt-12 inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-md 
+    shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Back to Gallery</button>
     </a>
   </div>
+  <!-- Back To Gallery Button End -->
+
   <script type="module" src="../js/projectA.js" defer></script>
 </body>
 
