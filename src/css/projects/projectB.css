@@ -5,7 +5,6 @@ body {
     padding: 0;
     text-align: center;
     overflow: scroll;
-    background-color: rgb(255, 255, 255);
 }
 
 #title-list {
@@ -14,13 +13,6 @@ body {
     text-align: center;
     font-size: 2.8rem;
     font-family: 'Dosis', 'Cormorant Garamond', serif;
-}
-
-p {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    text-align: center;
-    font-size: 1.2rem;
 }
 
 button {
