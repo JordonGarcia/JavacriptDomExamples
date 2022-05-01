@@ -4,27 +4,60 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Incrementation in JavaScript</title>
-    <meta name="description" content="Incrementation in JavaScript">
+    <title>Incrementing in JavaScript</title>
+    <meta name="description" content="Incrementing in JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TailWindCSS -->
+    <link href="../css/tailwind.css" rel="stylesheet">
     <!-- Custom styles for this project -->
     <link rel="stylesheet" href="../css/projects/projectC.css">
 </head>
 
-<body>
-    <p id="title-list">javascript Incrementation</p>
-    <p id="title-list-secondary">The background color dynamically changes in accordance to the value.</p>
-    <div id="counter-div">
-        <div id="counter-value-div">
-            <p id="counter-value">0</p>
-        </div>
-        <button id="increase-btn" class="button-styles counter">+ Increase</button>
-        <button id="decrease-btn" class="button-styles counter">- Decrease</button>
+<body class="text-center m-0 p-0">
+    <p class="font-dosis mt-24 text-2xl tablet:text-3xl laptop:text-4xl">Javascript Incrementing</p>
+    <p class="font-dosis mt-5 text-lg tablet:text-xl laptop:text-2xl">
+        The background color changes, in accordance to the counter value.</p>
+    <div class="mt-20">
+        <p id="counter-value" class="font-dosis text-3xl tablet:text-4xl m-12">0</p>
     </div>
-    <button id="reset-btn" class="white-btn custom-btn button-styles">Reset</button>
-    <a href="/">
-        <button id="home-button" class="button-styles white-btn gallery-text">Back to Gallery</button>
-    </a>
+
+    <!-- Increase Button Start -->
+    <div>
+        <button type="button" id="increase-btn"
+            class="mt-5 mr-2 inline-flex items-center px-6 py-3 shadow-sm text-base font-medium
+         rounded-md text-gray-800 bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+            + Increase
+        </button>
+        <!-- Increase Button End -->
+
+        <!-- Decrease Button Start -->
+        <button type="button" id="decrease-btn"
+            class="mt-5 inline-flex items-center px-6 py-3 shadow-sm text-base font-medium
+     rounded-md text-gray-800 bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+            - Decrease
+        </button>
+        <!-- Decrease Button End -->
+    </div>
+
+    <!-- Reset Button Start -->
+    <div class="mt-5">
+        <button type="button" id="reset-btn"
+            class="mt-5 mr-2 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
+     rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Reset
+        </button>
+        <!-- Reset Button End -->
+
+        <!-- Back To Gallery Button Start -->
+        <a href="/">
+            <button type="button" id="home-button"
+                class="mt-5 inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-md 
+    shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Back to Gallery</button>
+        </a>
+    </div>
+    <!-- Back To Gallery Button End -->
+
     <script type="module" src="../js/projectC.js" defer></script>
 </body>
 
