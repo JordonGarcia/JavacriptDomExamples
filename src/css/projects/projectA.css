@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 
+* {
+    touch-action: manipulation;
+}
+
 body {
     margin: 0;
     padding: 0;
