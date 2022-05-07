@@ -19,6 +19,10 @@ document.querySelectorAll('input').forEach((input) => {
 		let RGBValue = (style.backgroundColor = rgb); // Define input values as RGB Values.
 
 		document.getElementById('range-value').innerHTML = RGBValue;
+
+		redValue.innerHTML = `Red: ${inputRed.value}`;
+		greenValue.innerHTML = `Green: ${inputGreen.value}`;
+		blueValue.innerHTML = `Blue: ${inputBlue.value}`;
 	};
 
 	reset.onclick = () => {
@@ -34,8 +38,4 @@ document.querySelectorAll('input').forEach((input) => {
 		greenValue.innerHTML = `Green: ${inputGreen.value}`;
 		blueValue.innerHTML = `Blue: ${inputBlue.value}`;
 	};
-
-	redValue.innerHTML = `Red: ${inputRed.value}`;
-	greenValue.innerHTML = `Green: ${inputGreen.value}`;
-	blueValue.innerHTML = `Blue: ${inputBlue.value}`;
 });
