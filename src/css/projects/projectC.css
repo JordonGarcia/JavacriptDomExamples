@@ -2,7 +2,7 @@
 
 /* Project UI Responsiveness */
 /* Larger sized mobile devices */
-@media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
 
     * {
         touch-action: manipulation;
