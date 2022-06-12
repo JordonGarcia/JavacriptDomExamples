@@ -1,170 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- TODO: Migrate from Bootstrap to TailwindCSS -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Time Speed Distance Calculator</title>
     <meta name="description" content="Calculate time and speed in JavaScript">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap Core -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- TailWindCSS -->
+    <link href="../css/tailwind.css" rel="stylesheet">
     <!-- Custom styles for this project -->
     <link rel="stylesheet" href="../css/projects/projectD.css">
 </head>
 
-<body>
-    <div class="collapse pt-3" id="navbarHeader">
-    </div>
-    <div class="navbar navbar-dark bg-dark box-shadow p-3">
-        <div class="container d-flex justify-content-between">
-            <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-calculator" viewBox="0 0 16 16">
-                    <path
-                        d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
-                    <path
-                        d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z" />
-                </svg>
-                <strong class="mx-2">Speed, Distance & Time Calculator</strong>
-            </a>
+<body class="bg-slate-900 text-center overflow-hidden m-0 p-0">
+
+    <!-- Error Modal Start -->
+    <div id="invalid-input-value-div" class="hidden">
+
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+            <div class="fixed z-10 inset-0 overflow-y-auto">
+                <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+                    <div
+                        class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
+                        <div>
+
+                            <!-- Heroicon name: outline/check -->
+                            <div
+                                class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <!-- Heroicon name: outline/exclamation -->
+                                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+
+                            <div class="mt-3 text-center sm:mt-5">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Input
+                                    Error</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-700">Input values must not exceed maximum
+                                        values, contain letters, special
+                                        characters. Values must not be negative. Error message shown below:</p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-sm font-semibold text-gray-800" id="input-error-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 sm:mt-6">
+                            <button type="button" id="close-modal"
+                                class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                                Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <p id="title-list">Time and Speed Distance Calculator</p>
+    <!-- Error Modal End -->
 
-    <!-- Invalid input value DIV -->
-    <div id="invalid-input-value-div" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span id="close-modal">&times;</span>
-                <h3>Invalid Inputs</h3>
-            </div>
-            <div class="modal-body">
-                <p class="m-2">Input values must not exceed maximum values, contain letters, special characters. Values
-                    must not be
-                    negative.
-                    Error message shown below:</p>
-                <p id="input-error-text"></p>
-            </div>
-            <div class="modal-footer">
-                <a href="#" id="close-modal-div" class="btn btn-dark m-2">Close</a>
-            </div>
-        </div>
-    </div>
+    <!-- Project Title Header Start -->
+    <p id="title-list" class="text-gray-200 text-2xl tablet:text-3xl laptop:text-4xl">Time Speed Distance Calculator
+    </p>
+    <!-- Project Title Header End -->
 
-    <!-- Calculator Area -->
-    <div id="calculator-wrapper">
+    <!-- Actual Calculator Start -->
+    <div id="calculator-wrapper" class="bg-slate-800 p-4 mt-4 tablet:mt-7 laptop:mt-12 backdrop-blur-md rounded-md">
         <form autocomplete="off">
             <!-- Select Miles or Kilometers -->
-            <label>Measurement:</label>
-            <select id="miles-kilometers-select" class="form-select mb-3">
-                <option value="Miles">Miles</option>
-                <option value="Kilometres">Kilometres</option>
-            </select>
+            <div>
+                <label class="block text-base font-medium text-gray-200">Measurement:</label>
+                <select id="miles-kilometers-select"
+                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option selected>Miles</option>
+                    <option>Kilometres</option>
+                </select>
+            </div>
+
             <!-- Select speed or distance -->
-            <label>Calculate:</label>
-            <select id="speed-distance-select" class="form-select mb-3">
-                <option value="select-speed-distance">-- Select --</option>
-                <option value="speed">Speed</option>
-                <option value="distance">Distance</option>
-            </select>
+            <div>
+                <label class="mt-2 block text-base font-medium text-gray-200">Calculate:</label>
+                <select id="speed-distance-select"
+                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="select-speed-distance" selected>-- Select --</option>
+                    <option value="speed">Solve for Speed</option>
+                    <option value="distance">Solve for Distance</option>
+                </select>
+            </div>
 
-            <!-- Calculate Speed Div -->
-            <div id="calculate-speed-div">
-                <p id="distance-text">Distance Traveled:</p>
+            <!-- Solve for Speed Calculate Div Start -->
+            <div id="calculate-speed-div" class="hidden mt-4">
+                <p id="distance-text" class="text-gray-200 font-medium text-lg">Distance Traveled:</p>
                 <div id="duration-select">
-                    <!-- Input Distance -->
-                    <div class="input-group">
-                        <input type="number" class="input-calculate" id="distance-input" step="any" min="0" max="60"
-                            autocomplete="off">
-                        <div><span class="input-group-text" id="speed-kilometers-option">Miles</span></div>
-                        <!-- TODO: Make Minute automatically turn to Minutes if number value is 2 or greater. -->
-                    </div>
 
-                    <!-- Calculate Speed Duration UI area -->
+                    <!-- Input Distance Traveled Start -->
+                    <div class="input-group">
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <input type="number" id="distance-input"
+                                class="input-calculate flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                placeholder="Distance Traveled" step="any" min="0" autocomplete="off">
+                            <!-- TODO: Change input type number to text. And filter/regex in JS to get rid of the annoying arrows. OR, just remove arrows with CSS. -->
+                            <span id="speed-kilometers-option"
+                                class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                Miles</span>
+                        </div>
+                    </div>
+                    <!-- Input Distance Traveled End -->
+
+                    <!-- Calculate Speed Duration UI Start -->
                     <div id="duration-div-calc-speed">
-                        <p>Duration:</p>
-                        <!-- TODO: Make Calculator UI look clean, nice, and consistent and responsive, draggable border, resizable, etc. -->
-                        <!-- Input hours -->
-                        <div class="input-group">
-                            <input type="number" class="duration-input-hours" step="any" min="0" autocomplete="off">
-                            <div><span class="input-group-text">Hour</span></div>
-                            <!-- TODO: Make Hour automatically turn to Hours if number value is 2 or greater. -->
-                        </div>
+                        <p class="text-gray-200 font-medium text-base mt-4">Duration:</p>
 
-                        <!-- Input minutes -->
+                        <!-- Input hours Start -->
                         <div class="input-group">
-                            <input type="number" class="duration-input-minutes" step="any" min="0" max="60"
-                                autocomplete="off">
-                            <div><span class="input-group-text">Minute</span></div>
-                            <!-- TODO: Make Minute automatically turn to Minutes if number value is 2 or greater. -->
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <input type="number"
+                                    class="duration-input-hours flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                    placeholder="Hours" step="any" min="0" autocomplete="off">
+                                <span
+                                    class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                    Hr</span>
+                            </div>
                         </div>
+                        <!-- Input Hours End -->
 
-                        <!-- Input seconds -->
+                        <!-- Input Minutes Start -->
                         <div class="input-group">
-                            <input type="number" class="duration-input-seconds" step="any" min="0" max="60"
-                                autocomplete="off">
-                            <div><span class="input-group-text">Second</span></div>
-                            <!-- TODO: Make Second automatically turn to Seconds if number  value is 2 or greater. -->
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <input type="number"
+                                    class="duration-input-minutes flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                    placeholder="Minutes" step="any" min="0" max="60" autocomplete="off">
+                                <span
+                                    class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                    Min</span>
+                            </div>
                         </div>
+                        <!-- Input Minutes End -->
+
+                        <!-- Input Seconds Start -->
+                        <div class="input-group">
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <input type="number"
+                                    class="duration-input-seconds flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                    placeholder="Seconds" step="any" min="0" max="60" autocomplete="off">
+                                <span
+                                    class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                    Sec</span>
+                            </div>
+                        </div>
+                        <!-- Input Seconds End -->
                     </div>
+                    <!-- Calculate Speed Duration UI End -->
                 </div>
-                <a href="#" id="calculate-speed-button" class="btn btn-primary m-3">Calculate</a>
+
+                <!-- Calculate Speed Button Start -->
+                <button type="button" id="calculate-speed-button"
+                    class="m-3 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Calculate Speed</button>
+                <!-- Calculate Speed Button End -->
+
             </div>
-            <!-- Calculated Speed Results UI Div -->
+            <!-- Solve for Speed Calculate Div End -->
+
+            <!-- Calculated Speed Results UI Div Start -->
             <div id="speed-result-div">
-                <p><span id="average-speed-result"></span></p>
+                <p class="text-base text-gray-200 font-semibold"><span id="average-speed-result"></span></p>
             </div>
+            <!-- Calculated Speed Results UI Div End -->
 
-            <!-- Calculate Distance UI Div -->
-            <div id="calculate-distance-div">
-                <p>Average speed in <span id="distance-kilometers">MPH</span>?</p>
-                <!-- Input given Speed/Velocity -->
-                <input type="number" class="input-calculate" id="speed-input" step="any" autocomplete="off">
-                <!-- Calculate Distance Duration UI area -->
-                <div id="duration-div-calc-distance">
-                    <p>Duration:</p>
-                    <!-- TODO: Make Calculator UI look clean, nice, and consistent and responsive, draggable border, resizable, etc. -->
-                    <!-- Input hours -->
-                    <div class="input-group">
-                        <input type="number" class="duration-input-hours" step="any" min="0" autocomplete="off">
-                        <div><span class="input-group-text">Hour</span></div>
-                        <!-- TODO: Make Hour automatically turn to Hours if number value is 2 or greater. -->
-                    </div>
-
-                    <!-- Input minutes -->
-                    <div class="input-group">
-                        <input type="number" class="duration-input-minutes" step="any" min="0" max="60"
-                            autocomplete="off">
-                        <div><span class="input-group-text">Minute</span></div>
-                        <!-- TODO: Make Minute automatically turn to Minutes if number value is 2 or greater. -->
-                    </div>
-
-                    <!-- Input seconds -->
-                    <div class="input-group">
-                        <input type="number" class="duration-input-seconds" step="any" min="0" max="60"
-                            autocomplete="off">
-                        <div><span class="input-group-text">Second</span></div>
-                        <!-- TODO: Make Second automatically turn to Seconds if number  value is 2 or greater. -->
-                    </div>
-                    <a href="#" id="calculate-distance-button" class="btn btn-primary m-3">Calculate</a>
+            <!-- Calculate Distance Div Start -->
+            <div id="calculate-distance-div" class="hidden mt-4">
+                <!-- Input Speed/Velocity Start -->
+                <p class="text-gray-200 font-medium text-base">Average speed in <span
+                        id="distance-kilometers">MPH</span>?</p>
+                <div class="mt-1 flex rounded-md shadow-sm">
+                    <input type="number" id="speed-input"
+                        class="input-calculate flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                        placeholder="Average Speed" step="any" min="0" autocomplete="off">
                 </div>
+                <!-- Input Speed/Velocity End -->
+
+                <!-- Solve for Distance Calculation Start -->
+                <div id="duration-div-calc-distance">
+                    <p class="text-gray-200 font-medium text-base">Duration:</p>
+
+                    <!-- Input Hours Start -->
+                    <div class="input-group">
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <input type="number"
+                                class="duration-input-hours flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                placeholder="Hours" step="any" min="0" autocomplete="off">
+                            <!-- TODO: Change input type number to text. And filter/regex in JS to get rid of the annoying arrows. OR, just remove arrows with CSS. -->
+                            <span
+                                class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                Hr</span>
+                        </div>
+                    </div>
+                    <!-- Input Hours End -->
+
+                    <!-- Input Minutes Start -->
+                    <div class="input-group">
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <input type="number"
+                                class="duration-input-minutes flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                placeholder="Minutes" step="any" min="0" max="60" autocomplete="off">
+                            <span
+                                class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                Min</span>
+                        </div>
+                    </div>
+                    <!-- Input Minutes End -->
+
+                    <!-- Input Seconds Start -->
+                    <div class="input-group">
+                        <div class="input-group">
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <input type="number"
+                                    class="duration-input-seconds flex-1 min-w-0 block w-full px-3 py-2 rounded-md focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300"
+                                    placeholder="Seconds" step="any" min="0" max="60" autocomplete="off">
+                                <span
+                                    class="input-group-text inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                    Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Input Seconds End -->
+
+                    <!-- Calculate Distance Button Start -->
+                    <button type="button" id="calculate-distance-button"
+                        class="m-3 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Calculate Distance</button>
+                    <!-- Calculate Distance Button End -->
+
+                </div>
+                <!-- Solve for Distance Calculation End -->
             </div>
-            <!-- Calculated Distance Results UI Div -->
+            <!-- Calculate Distance Div End -->
+
+            <!-- Calculated Distance Results UI Div Start -->
             <div id="distance-result-div">
-                <p><span id="average-distance-result"></span></p>
+                <p class="text-gray-100 font-semibold text-base"><span id="average-distance-result"></span></p>
             </div>
+            <!-- Calculated Distance Results UI Div End -->
+
         </form>
     </div>
-    <!-- Button Div UI Area -->
-    <div id="button-div-section">
-        <button id="reset-btn" class="white-btn custom-btn button-styles">Reset</button>
+    <!-- Actual Calculator End -->
+
+    <!-- Reset Button Start -->
+    <div class="mt-5">
+        <button type="button" id="reset-btn"
+            class="mt-5 mr-2 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
+     rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Reset
+        </button>
+        <!-- Reset Button End -->
+
+        <!-- Back To Gallery Button Start -->
         <a href="/">
-            <button id="home-button" class="button-styles white-btn gallery-text">Back to Gallery</button>
+            <button type="button" id="home-button"
+                class="mt-5 inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-md 
+    shadow-sm text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Back to Gallery</button>
         </a>
     </div>
+    <!-- Back To Gallery Button End -->
     <script type="module" src="../js/projectD.js" defer></script>
 </body>
 
