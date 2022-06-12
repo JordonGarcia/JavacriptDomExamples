@@ -1,3 +1,4 @@
+// TODO: Push data into an array instead of cookies, so user can use without cookies enabled.
 // Check to see if cookies are enabled.
 if (!navigator.cookieEnabled) {
 	alert('Cookies are not enabled. Please enable cookies for the experiment to work as intended.');
