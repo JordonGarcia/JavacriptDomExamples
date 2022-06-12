@@ -8,7 +8,7 @@ input[type="range"] {
     display: block;
     -webkit-appearance: none;
     background-color: #eeeeee;
-    width: 50%;
+    width: 60%;
     height: 0.7rem;
     border-radius: 3px;
     margin: 0 auto;
@@ -34,4 +34,25 @@ input[type="range"]::-webkit-slider-thumb:active {
     transform: scale(1.4);
     border: 3px solid rgb(12, 12, 12);
 }
+
 /* End Input Sliders */
+
+/* Input Slider Media Query Start */
+@media only screen and (max-device-width: 428px) and (max-device-height: 926px) {
+
+    input[type="range"] {
+        width: 80%;
+        height: 0.5rem;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 1.3rem;
+        height: 1.3em;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:active {
+        transform: scale(1.25);
+    }
+}
+
+/* End Input Slider Media Query */
