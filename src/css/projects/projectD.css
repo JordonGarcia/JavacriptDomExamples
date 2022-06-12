@@ -1,104 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 
-body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow: scroll;
-}
-
 #title-list {
     margin-top: 15vh;
-    position: relative;
-    text-align: center;
-    font-size: 2.8rem;
     font-family: 'Dosis', 'Cormorant Garamond', serif;
-}
-
-p {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-/* White button styling */
-.white-btn {
-    background-color: rgb(226, 226, 226) !important;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-}
-
-.white-btn:after {
-    border-radius: 5px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
-    transition: all 0.3s ease;
-}
-
-/* Back home button styling */
-#reset-button {
-    margin-top: 1vh;
-}
-
-#home-button {
-    margin-top: 2vh;
-    width: fit-content;
-}
-
-/* Button styling (All the buttons globally) */
-.button-styles {
-    margin: 20px;
-    margin-top: 15vh;
-    width: fit-content;
-    height: fit-content;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    font-size: 1rem;
-    border: none;
-    color: #000;
-}
-
-.button-styles:after {
-    border-radius: 5px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-}
-
-.button-styles:active {
-    top: 3px;
-}
-
-.button-styles:hover {
-    border-radius: 5px;
-    color: #000;
-}
-
-.button-styles:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
 }
 
 /* Calculator Styling */
@@ -107,13 +11,8 @@ label {
 }
 
 #calculator-wrapper {
-    color: white;
     width: fit-content;
-    background: rgb(44, 48, 53);
-    padding: 2em;
     border: 2px solid #000;
-    border-radius: 4px;
-    font-size: 0.9em;
     display: flex;
     justify-content: center;
     position: relative;
@@ -121,18 +20,7 @@ label {
     margin-right: auto;
 }
 
-#calculate-speed-div,
-#calculate-distance-div {
-    margin-top: 2em;
-    display: none;
-}
-
-#distance-text {
-    font-size: 1.125rem;
-}
-
 input {
-    max-width: 5;
     margin: 3px;
     border: rgb(0, 0, 0) solid 2px;
 }
@@ -144,8 +32,6 @@ input {
     align-items: center;
     padding: .37rem .77rem;
     margin: 0.22rem;
-    font-size: 1rem;
-    font-weight: 400;
     line-height: 1.5;
     color: #495057;
     text-align: center;
@@ -155,127 +41,11 @@ input {
     border-radius: .2rem;
 }
 
-/* Average Speed result div*/
-#speed-result-div {
-    display: none;
-}
-
-/* Reset and back to gallery button area */
-#button-div-section {
-    margin-top: 1vh;
-}
-
-#duration-div-calc-distance {
-    margin-top: 4vh;
-}
-
-/* Invalid input values Div */
-.modal {
-    z-index: 100;
-    display: none;
-    position: relative;
-    z-index: 1;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50vw;
-    height: 50vh;
-    overflow: auto;
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Modal Animation */
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-/* The Close Button */
-#close-modal {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#close-modal:hover,
-#close-modal:focus {
-    color: grey;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #a03131;
-    color: white;
-}
-
-.modal-body {
-    padding: 2px 16px;
-}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #a03131;
-    color: white;
-}
-
-#input-error-text {
-    font-weight: bold;
-}
-
 /* Project UI Responsiveness */
 /* Larger sized mobile devices */
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
 
     * {
         touch-action: manipulation;
-    }
-
-    #title-list {
-        margin-top: 8vh;
-        font-size: 2rem;
-    }
-
-    .button-styles {
-        margin-top: 5vh;
-    }
-
-    .modal {
-        width: 80vw;
-        height: 40vh;
     }
 }
