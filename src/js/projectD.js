@@ -1,4 +1,4 @@
-// TODO: You can improve this calculator, it's noob because I made it ages ago lol.
+// TODO: Improve this calculator, it's bad because I made it ages ago lol.
 // Calculate distance button.
 const calcDistanceButton = document.getElementById('calculate-distance-button');
 // Select the conversion type calculate "speed" or "distance".
@@ -16,8 +16,6 @@ const selectMeasurement = (e) => {
 
 	let type = e.target.value;
 	let abbreviation = measurement[type];
-
-	type[0] = type[0];
 
 	speedKilometers.innerText = type;
 	distanceKilometers.innerText = abbreviation;
@@ -172,11 +170,9 @@ const calculateDistance = () => {
 const reset = document.getElementById('reset-btn');
 reset.onclick = () => location.reload();
 
-// Close out of the Invalid Input Div
-const modalXButton = document.getElementById('close-modal');
-modalXButton.onclick = () => (invalidInputDiv.style.display = 'none');
-const closeDivButton = document.getElementById('close-modal-div');
-closeDivButton.onclick = () => (invalidInputDiv.style.display = 'none');
+// Close out of the Error Modal
+const closeModalBtn = document.getElementById('close-modal');
+closeModalBtn.onclick = () => (invalidInputDiv.style.display = 'none');
 
 // Remove calculator visibility when error is shown.
 const calculator = document.getElementById('calculator-wrapper');
