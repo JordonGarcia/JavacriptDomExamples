@@ -52,91 +52,6 @@ input[type=number] {
     display: none
 }
 
-#new-game-button {
-    margin: 0 auto;
-    margin-bottom: 3vh;
-    display: none
-}
-
-/* White button styling */
-.white-btn {
-    background-color: rgb(226, 226, 226) !important;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 5px 5px 15px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
-}
-
-.white-btn:after {
-    border-radius: 5px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-    box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 5px 5px 15px 0px #0002, 4px 4px 5px 0px #0001;
-    transition: all 0.3s ease;
-}
-
-/* Back home button styling */
-#reset-button {
-    margin-top: 1vh;
-}
-
-#home-button {
-    margin-top: 1vh;
-    width: fit-content;
-}
-
-/* Button styling (All the buttons globally) */
-.button-styles {
-    margin: 18px;
-    margin-top: 8vh;
-    width: fit-content;
-    height: fit-content;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    font-size: 1rem;
-    border: none;
-    color: #000;
-}
-
-.button-styles:after {
-    border-radius: 5px;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-}
-
-.button-styles:active {
-    top: 3px;
-}
-
-.button-styles:hover {
-    border-radius: 5px;
-    color: #000;
-}
-
-.button-styles:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
-}
-
 /* Game over modal */
 .modal {
     z-index: 100;
@@ -333,19 +248,5 @@ input[type=number] {
 
     #game-div {
         margin-top: 12vh;
-    }
-
-    #header-primary {
-        font-size: 1.75rem;
-        margin-top: 5vh;
-    }
-
-    #header-secondary {
-        margin-top: 2vh;
-        font-size: 1.2rem;
-    }
-
-    #button-styles {
-        margin-top: 1vh;
     }
 }
