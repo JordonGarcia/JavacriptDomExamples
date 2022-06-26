@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO: Migrate from Bootstrap to TailwindCSS -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Guess the random number between 0 and 100!">
     <!-- TailWindCSS -->
     <link href="../css/tailwind.css" rel="stylesheet">
     <!-- Custom styles for this project -->
     <link rel="stylesheet" href="../css/projects/projectE.css">
+    <title>Guessing Game</title>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
 
-    <div id="game-div">
-        <h2 class="text-xl tablet:text-2xl laptop:text-3xl">Guess the random number between 0 and 100 within 10 times
-        </h2>
-        <h4 class="text-lg tablet:text-xl laptop:text-2xl"> If you win, you win $500! If you lose, you lose everything!
-            How high can you go?</h4>
+    <!-- Game Div Area Start -->
+    <div>
+        <p class="text-lg tablet:text-lg laptop:text-3xl mt-20 tablet:mt-32 laptop:mt-52">
+            Guess the random number between 0 and 100</p>
+        <p class="text-base tablet:text-lg laptop:text-2xl mt-6 tablet:mt-5 laptop:mt-4">
+            Winning gives you $500! Losing loses you everything! How high can you go? You have up to 10 tries!
+        </p>
+
 
         <!-- Start Game Button Start -->
         <button type="button" id="start-game-button"
-            class="mt-5 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base 
-    font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            class="mt-5 tablet:mt-6 laptop:mt-7 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base 
+         font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Start Game
         </button>
         <!-- Start Game Button End -->
 
-        <div id="game-active-area">
+        
+        <div id="game-active-area" class="hidden mt-2 tablet:mt-3 laptop:mt-4">
             <span id="balance-amount" class="h5">Your current balance: $0</span><br>
-            <span id="win-streak-text" class="h5">Winstreak count: 0</span><br>
+            <span id="win-streak-text" class="font-medium text-base tablet:text-lg laptop:text-xl">Winstreak count:
+                0</span><br>
             <div id="game-container">
                 <span id="higher-lower-text">The number is</span>
-                <!-- TODO: Style the buttons with the custom white button CSS -->
                 <input type="number" id="guess-input"><button id="guess-button" class="confetti-button">Guess</button>
             </div>
         </div>
 
-        <p id="game-result" class="h3"></p>
+        <p id="game-result" class="font-bold text-lg "></p>
+
 
         <!-- New Game Button Start -->
         <button type="button" id="new-game-button"
-            class="h3 mt-6 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
+            class="mt-6 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
      rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             New Game
         </button>
         <!-- New Game Button End -->
 
     </div>
+    <!-- Game Div Area End -->
 
-    <!-- Game over popup display -->
+<!-- TODO: Migrate To TailwindCSS Modal -->
+    <!-- Game Over Modal Start -->
     <div id="game-over-modal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close-modal">&times;</span>
                 <h3>Out of tries! You lost all your money!</h3>
             </div>
             <div class="modal-body">
-                <p class="m-2 h2">Game over!</p>
+                <p class="m-2">Game over!</p>
                 <h4>The random number was <span id="number-reveal"></span></h4>
                 <p id="input-error-text"></p>
             </div>
@@ -71,25 +76,58 @@
             </div>
         </div>
     </div>
+    <!-- Game Over Modal End -->
 
-    <!-- Input Error Modal -->
-    <div id="input-error-modal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close-modal">&times;</span>
-                <h3>Please use acceptable input values.</h3>
-            </div>
-            <div class="modal-body">
-                <p class="m-2 h2" id="9"></p>
-                <h4>Please choose a number within the guessing range of 0 to 100. Numbers only, no letters
-                    and special characters.</h4>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="close-modal-div btn btn-dark m-2">Close</a>
+
+    <!-- Error Modal Start -->
+    <div id="input-error-modal" class="hidden modal">
+        <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+            <div class="fixed z-10 inset-0 overflow-y-auto">
+                <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+                    <div
+                        class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
+                        <div>
+
+                            <!-- Heroicon name: outline/check -->
+                            <div
+                                class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                                <!-- Heroicon name: outline/exclamation -->
+                                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+
+                            <div class="mt-3 text-center sm:mt-5">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                    Please use acceptable input values.
+                                </h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-700">
+                                        Please choose a number within the guessing range of 0 to 100.
+                                        Numbers only, no letters and special characters.
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <p class="text-sm font-semibold text-gray-800" id="input-error-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 sm:mt-6">
+                            <button type="button"
+                                class="close-modal inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                                Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Error Modal End -->
+
 
     <!-- Reset Button Start -->
     <button type="button" id="reset-btn"
@@ -98,6 +136,7 @@
         Reset
     </button>
     <!-- Start Game Button End -->
+
 
     <!-- Back To Gallery Button Start -->
     <div>
