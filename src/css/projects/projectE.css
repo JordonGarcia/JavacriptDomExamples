@@ -16,14 +16,6 @@ canvas {
     width: 100%;
 }
 
-h3 {
-    margin: 0 auto;
-}
-
-#game-div {
-    margin-top: 30vh;
-}
-
 #higher-lower-text {
     margin-top: 5vh;
     font-size: 1.4rem;
@@ -46,10 +38,6 @@ input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
     margin: 0;
-}
-
-#game-active-area {
-    display: none
 }
 
 /* Game over modal */
@@ -103,21 +91,6 @@ input[type=number] {
         top: 0;
         opacity: 1
     }
-}
-
-/* The Close Button */
-.close-modal {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-    color: grey;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .modal-header {
@@ -240,13 +213,7 @@ input[type=number] {
 /* Larger sized mobile devices */
 @media only screen and (max-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
 
-    /* TODO: Make the Modals for all projects be mobile UI friendly  */
-
     * {
         touch-action: manipulation;
-    }
-
-    #game-div {
-        margin-top: 12vh;
     }
 }
