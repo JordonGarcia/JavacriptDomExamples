@@ -13,14 +13,14 @@ if (!navigator.cookieEnabled) {
 	const balanceAmount = document.getElementById('balance-amount');
 	const guessButton = document.getElementById('guess-button');
 	const guessInput = document.getElementById('guess-input');
-	let guessCount = 1;
+	let guessCount = 0;
 
 	let randomNumber = Math.floor(Math.random() * 100) + 1;
 
 	// This is where we check our current balance.
 	const balanceAmountValue = sessionStorage.getItem('winBalance');
-	if (balanceAmountValue === null) balanceAmount.innerHTML = 'Your current balance is $0';
-	else balanceAmount.innerHTML = `Your current balance is $${balanceAmountValue}`;
+	if (balanceAmountValue === null) balanceAmount.innerHTML = '$0';
+	else balanceAmount.innerHTML = `$${balanceAmountValue}`;
 
 	const startGame = () => {
 		let headerSecondary = document.getElementById('header-secondary');
@@ -30,9 +30,14 @@ if (!navigator.cookieEnabled) {
 	};
 
 	const validateGuess = () => {
+		const triesLeftText = document.getElementById('tries-left-count');
+
 		let maxGuesses = 10;
 		++guessCount;
-		if (guessCount == maxGuesses) gameLose();
+
+		triesLeftText.innerHTML = guessCount + '/10';
+
+		if (guessCount > maxGuesses) gameLose();
 	};
 
 	// Handle winStreak value.
@@ -40,7 +45,7 @@ if (!navigator.cookieEnabled) {
 	if (winStreak === null) winStreak = 0;
 	// WinStreak Text.
 	const winStreakText = document.getElementById('win-streak-text');
-	winStreakText.innerHTML = `WinStreak is: ${winStreak}`;
+	winStreakText.innerHTML = `${winStreak}`;
 
 	// Modal elements.
 	const inputErrorMessage = document.getElementById('input-error-text');
