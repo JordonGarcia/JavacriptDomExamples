@@ -5,17 +5,22 @@ if (!navigator.cookieEnabled) {
 }
 
 (() => {
+	const playAgainButton = document.getElementById('play-again-button');
 	const startGameButton = document.getElementById('start-game-button');
 	const activeGameArea = document.getElementById('game-active-area');
 	const highLowText = document.getElementById('higher-lower-text');
 	const gameOverModal = document.getElementById('game-over-modal');
-	const newGameButton = document.getElementById('new-game-button');
 	const balanceAmount = document.getElementById('balance-amount');
+	const galleryButton = document.getElementById('gallery-button');
 	const guessButton = document.getElementById('guess-button');
 	const guessInput = document.getElementById('guess-input');
+	const mainTitle = document.getElementById('main-title');
+	const subTitle = document.getElementById('subtitle');
 	let guessCount = 0;
 
 	let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+	console.log(randomNumber);
 
 	// This is where we check our current balance.
 	const balanceAmountValue = sessionStorage.getItem('winBalance');
@@ -23,10 +28,9 @@ if (!navigator.cookieEnabled) {
 	else balanceAmount.innerHTML = `$${balanceAmountValue}`;
 
 	const startGame = () => {
-		let headerSecondary = document.getElementById('header-secondary');
 		activeGameArea.style.display = 'block';
 		startGameButton.style.display = 'none';
-		headerSecondary.style.display = 'none';
+		subTitle.style.display = 'none';
 	};
 
 	const validateGuess = () => {
@@ -58,11 +62,25 @@ if (!navigator.cookieEnabled) {
 		if (guessInput.value > 100 || guessInput.value.match(regex)) {
 			guessInput.value = null;
 			highLowText.innerHTML = null;
+
 			inputErrorMessageModal.style.display = 'block';
+			activeGameArea.remove();
+			galleryButton.remove();
+			resetButton.remove();
+			mainTitle.remove();
+			subTitle.remove();
+
 			inputErrorMessage.innerText = 'Please choose a number within the guessing range of 0 to 100.';
 		} else if (guessInput.value < 0) {
 			guessInput.value = null;
 			highLowText.innerHTML = null;
+
+			activeGameArea.remove();
+			galleryButton.remove();
+			resetButton.remove();
+			mainTitle.remove();
+			subTitle.remove();
+
 			inputErrorMessageModal.style.display = 'block';
 			inputErrorMessage.innerText = 'Guess value cannot be negative.';
 		}
@@ -95,19 +113,24 @@ if (!navigator.cookieEnabled) {
 	};
 
 	// Define Game Result Text.
-	const gameResult = document.getElementById('game-result');
+	const gameResultWon = document.getElementById('game-result-won');
 	// New game button action.
 	const newGame = () => location.reload();
 
 	const gameEnd = () => {
-		activeGameArea.style.display = 'none';
-		newGameButton.style.display = 'block';
+		activeGameArea.remove();
+		galleryButton.remove();
+		resetButton.remove();
+		highLowText.remove();
+		mainTitle.remove();
+
 		guessInput.value = null;
 	};
 
 	const gameWin = () => {
-		gameResult.innerHTML = 'You won $500!';
+		gameResultWon.innerHTML = 'You won $500!';
 		highLowText.style.display = 'block';
+		playAgainButton.style.display = 'block';
 		gameEnd();
 	};
 
@@ -122,11 +145,9 @@ if (!navigator.cookieEnabled) {
 
 	// Close out of the Game Over modal.
 	const modalXButton = document.getElementsByClassName('close-modal');
-	const closeDivButton = document.getElementsByClassName('close-modal-div');
 
 	const closeModal = () => {
-		inputErrorMessageModal.style.display = 'none';
-		gameOverModal.style.display = 'none';
+		location.reload();
 	};
 
 	// Reset Button Action.
@@ -153,9 +174,8 @@ if (!navigator.cookieEnabled) {
 	startGameButton.addEventListener('click', startGame, false);
 	guessButton.addEventListener('click', validateGuess, false);
 	guessButton.addEventListener('click', validateInput, false);
-	newGameButton.addEventListener('click', newGame, false);
+	playAgainButton.addEventListener('click', newGame, false);
 	// Close the modal when the buttons are clicked.
-	for (let i = 0; i < closeDivButton.length; i++) closeDivButton[i].addEventListener('click', closeModal, false);
 	for (let i = 0; i < modalXButton.length; i++) modalXButton[i].addEventListener('click', closeModal, false);
 })();
 
