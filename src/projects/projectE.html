@@ -19,11 +19,12 @@
     <!-- Game Div Area Start -->
     <div>
         <!-- Header Title Main Start -->
-        <p class="text-xl m-2 font-dosis tablet:text-2xl laptop:text-3xl mt-44 tablet:mt-48 laptop:mt-52">
+        <p id="main-title"
+            class="text-xl m-2 font-dosis tablet:text-2xl laptop:text-3xl mt-44 tablet:mt-48 laptop:mt-52">
             Guess the random number between 0 and 100</p>
         <!-- Header Title Main End -->
         <!-- Header Title Sub Start -->
-        <p class="text-base font-dosis tablet:text-xl laptop:text-2xl mr-4 ml-4 mt-4 tablet:mt-4">
+        <p id="subtitle" class="text-base font-dosis tablet:text-xl laptop:text-2xl mr-4 ml-4 mt-4 tablet:mt-4">
             Winning gives you $500! How high can you go? You have up to 10 tries!
         </p>
         <!-- Header Title Sub End -->
@@ -54,34 +55,34 @@
         <!-- Game Active Text Area End -->
 
         <p id="higher-lower-text" class="hidden text-lg laptop:text-xl mt-2 tablet:mt-3 laptop:mt-4">The number is</p>
-        <p id="game-result" class="font-bold text-lg"></p>
+        <p id="game-result-won" class="font-bold text-lg"></p>
     </div>
     <!-- Game Div Area End -->
 
 
-
-    <!-- New Game Button Start -->
-    <button type="button" id="new-game-button"
-        class="mt-4 tablet:mt-5 laptop:mt-10 m-1 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
+    <div class="flex flex-col justify-center items-center">
+        <!-- New Game Button Start -->
+        <button type="button" id="play-again-button"
+            class="hidden file:mt-1 tablet:mt-2 laptop:mt-4 m-1 justify-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium
      rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        New Game
-    </button>
-    <!-- New Game Button End -->
-
-
-    <!-- Reset Button Start -->
-    <button type="button" id="reset-btn"
-        class="mt-4 tablet:mt-5 laptop:mt-7 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base 
-    font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        Reset
-    </button>
-    <!-- Start Game Button End -->
-
-
-    <!-- Back To Gallery Button Start -->
+            Play Again
+        </button>
+        <!-- New Game Button End -->
+    </div>
     <div>
+
+
+        <!-- Reset Button Start -->
+        <button type="button" id="reset-btn"
+            class="mt-4 tablet:mt-5 laptop:mt-7 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base 
+font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Reset
+        </button>
+        <!-- Reset Button End -->
+
+        <!-- Back To Gallery Button Start -->
         <a href="/">
-            <button type="button" id="home-button"
+            <button type="button" id="gallery-button"
                 class="mt-2 inline-flex items-center px-6 py-3 border border-transparent text-sm font-bold rounded-md 
     shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Back to Gallery</button>
@@ -112,14 +113,8 @@
 
                             <div class="mt-3 text-center sm:mt-5">
                                 <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                                    Please use acceptable input values.
+                                    Invalid Input Received.
                                 </h3>
-                                <div class="mt-2">
-                                    <p class="text-sm text-gray-700">
-                                        Please choose a number within the guessing range of 0 to 100.
-                                        Numbers only, no letters and special characters.
-                                    </p>
-                                </div>
                                 <div class="mt-2">
                                     <p class="text-sm font-semibold text-gray-800" id="input-error-text"></p>
                                 </div>
@@ -128,7 +123,7 @@
                         <div class="mt-5 sm:mt-6">
                             <button type="button"
                                 class="close-modal inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
-                                Close</button>
+                                Okay</button>
                         </div>
                     </div>
                 </div>
@@ -148,14 +143,12 @@
                     <div
                         class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
                         <div>
-
-                            <!-- Heroicon name: outline/check -->
-                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                                <!-- Heroicon name: outline/exclamation -->
-                                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-400">
+                                <!-- Heroicon name: puzzle -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                                 </svg>
                             </div>
 
@@ -165,7 +158,8 @@
                                 </h3>
                                 <div class="mt-2">
                                     <p class="text-sm text-gray-700" id="">
-                                        Game over! The random number was <span id="number-reveal"></span>
+                                        Game over! The random number was: <span id="number-reveal"
+                                            class="font-bold"></span>
                                     </p>
                                 </div>
                                 <div class="mt-2">
@@ -175,8 +169,8 @@
                         </div>
                         <div class="mt-5 sm:mt-6">
                             <button type="button"
-                                class="close-modal inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
-                                Close</button>
+                                class="close-modal inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-700 text-base font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                                Play Again</button>
                         </div>
                     </div>
                 </div>
