@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 canvas {
@@ -13,10 +13,6 @@ canvas {
     bottom: 0;
     left: 0;
     width: 100%;
-}
-
-#game-result {
-    margin: 2vh 0 2vh 0;
 }
 
 /* Chrome Guess Input Number Styling */
@@ -31,79 +27,6 @@ input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
     margin: 0;
-}
-
-/* Game over modal */
-.modal {
-    z-index: 100;
-    display: none;
-    position: relative;
-    z-index: 1;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50vw;
-    height: 50vh;
-    overflow: auto;
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Modal Animation */
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #a03131;
-    color: white;
-}
-
-.modal-body {
-    padding: 2px 16px;
-}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #a03131;
-    color: white;
-}
-
-#input-error-text {
-    font-weight: bold;
 }
 
 /* Confetti Button Styling */
