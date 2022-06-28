@@ -20,8 +20,6 @@ if (!navigator.cookieEnabled) {
 
 	let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-	console.log(randomNumber);
-
 	// This is where we check our current balance.
 	const balanceAmountValue = sessionStorage.getItem('winBalance');
 	if (balanceAmountValue === null) balanceAmount.innerHTML = '$0';
